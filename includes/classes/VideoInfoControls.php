@@ -9,7 +9,6 @@ class VideoInfoControls {
   }
 
   public function create() {
-
     $likeButton = $this->createLikeButton();
     $dislikeButton = $this->createDislikeButton();
 
@@ -25,8 +24,10 @@ class VideoInfoControls {
     $action = "likeVideo(this, $videoId)";
     $class = "likeButton";
     $imageSrc = "assets/images/icons/thumb-up.png";
-    // Change button img if video has already been liked
-
+    
+    if($this->video->wasLikedBy()) {
+      $imageSrc = "assets/images/icons/thumb-up-active.png";
+    }
     return ButtonProvider::createButton($text, $imageSrc, $action, $class);
   }
 
@@ -36,7 +37,10 @@ class VideoInfoControls {
     $action = "dislikeVideo(this, $videoId)";
     $class = "dislikeButton";
     $imageSrc = "assets/images/icons/thumb-down.png";
-    // Change button img if video has already been disliked
+    
+    if($this->video->wasDislikedBy()) {
+      $imageSrc = "assets/images/icons/thumb-down-active.png";
+    }
 
     return ButtonProvider::createButton($text, $imageSrc, $action, $class);
   }
