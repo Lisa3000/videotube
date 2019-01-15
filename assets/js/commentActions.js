@@ -1,7 +1,6 @@
 function postComment(button, postedBy, videoId, replyTo, containerClass) {
   var textarea = $(button).siblings("textarea");
   var commentText = textarea.val();
-  // Clear comment box
   textarea.val("");
 
   if (commentText) {
@@ -12,8 +11,10 @@ function postComment(button, postedBy, videoId, replyTo, containerClass) {
         videoId: videoId,
         responseTo: replyTo
       })
-      .done(function (data) {
-        alert(data);
+      .done(function (comment) {
+
+        $("." + containerClass).prepend(comment);
+
       });
   } else {
     alert("You can't post an empty comment");
