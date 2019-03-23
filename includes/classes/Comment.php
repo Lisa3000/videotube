@@ -6,6 +6,8 @@ class Comment {
   private $con, $sqlData, $userLoggedInObj, $videoId;
 
   public function __construct($con, $input, $userLoggedInObj, $videoId) {
+    // If $input is sql data, this part will be ignored and $sqlData will be set to the sql data.
+    // If input is NOT sql data and it's actually an ID, we'll run this code and by the end $input will contain sql data.
 
     if(!is_array($input)) {
       $query = $con->prepare("SELECT * FROM comments WHERE id=:id");
@@ -215,5 +217,24 @@ class Comment {
     }
   }
 
+  public function getReplies() {
+    $query = $this->con->prepare("SELECT * FROM comments WHERE responseTo=:commentId ORDER BY datePosted ASC");
+    $query->bindParam(":commentId", $id);
+
+    $id = $this->getId();
+
+    $query->execute();
+
+    $comments = "";
+
+    $videoId = $this->getVideoId();
+
+    while($row = $query->fetch(PDO::FETCH_ASSOC)) {
+      $comment = new Comment($this->con, $row, $this->userLoggedInObj, $videoId);
+      $comments .= $comment->create();
+    }
+
+    return $comments;
+  }
 }
 ?>

@@ -82,6 +82,8 @@ a:hover {
   padding: 10px 30px;
   display: flex;
   flex: 1;
+  background-color: #fafafa;
+  box-sizing: border-box;
 }
 
 #mastHeadContainer .searchBarContainer {
@@ -469,4 +471,15 @@ a:hover {
 
 .hidden {
   display: none !important;
+}
+
+.comments .repliesSection {
+  padding-left: 64px;
+  margin-top: 16px;
+}
+
+.commentSection .itemContainer .viewReplies {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
 }
