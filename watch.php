@@ -2,7 +2,8 @@
 require_once("includes/header.php");  
 require_once("includes/classes/VideoPlayer.php"); 
 require_once("includes/classes/VideoInfoSection.php"); 
-require_once("includes/classes/CommentSection.php"); 
+require_once("includes/classes/Comment.php"); 
+require_once("includes/classes/CommentSection.php");
 
 if(!isset($_GET["id"])) {
   echo "Page not found";
