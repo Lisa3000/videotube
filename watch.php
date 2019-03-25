@@ -26,14 +26,17 @@ $video->incrementViews();
     $videoInfo = new VideoInfoSection($con, $video, $userLoggedInObj);
     echo $videoInfo->create();
 
-    $commentSection = new commentSection($con, $video, $userLoggedInObj);
+    $commentSection = new CommentSection($con, $video, $userLoggedInObj);
     echo $commentSection->create();
   ?>
 
 </div>
 
 <div class="suggestions">
-
+  <?php
+  $videoGrid = new VideoGrid($con, $userLoggedInObj);
+  echo $videoGrid->create(null, null, false);
+  ?>
 </div>
   
 <?php require_once("includes/footer.php"); ?>
