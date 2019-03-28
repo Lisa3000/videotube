@@ -593,6 +593,7 @@ a:hover {
 
 .videoGrid.large .videoGridItem .details {
   max-width: 600px;
+  flex: 1;
 }
 
 .videoGrid.large .videoGridItem .details .title {
@@ -626,4 +627,150 @@ a:hover {
 
 .videoGridHeader a:last-child:after {
   content: '';
+}
+
+.signInLink {
+  color: #f00;
+  margin-left: 15px;
+}
+
+#sideNavContainer .navigationItems {
+  overflow-y: auto;
+}
+
+#sideNavContainer .navigationItem {
+  height: 40px;
+  display: flex;
+}
+
+#sideNavContainer .navigationItem img {
+  height: 18px;
+  margin-right: 27px;
+}
+
+#sideNavContainer .navigationItem span {
+  flex: 1;
+  color: #111;
+  font-size: 14px;
+}
+
+#sideNavContainer .navigationItem a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+
+#sideNavContainer .navigationItem a:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+#sideNavContainer .heading {
+  color: rgba(17,17,17,0.6);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 24px 0;
+  border-top: 1px solid #ededed;
+  display: block;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.coverPhotoContainer {
+  height: 200px;
+  flex: 1;
+  position: relative;
+}
+
+.coverPhotoContainer .coverPhoto {
+  width: 100%;
+  object-fit: cover;
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+.coverPhotoContainer .channelName {
+  position: absolute;
+  top: calc(50% - 40px);
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 4px;
+}
+
+.profileHeader {
+  padding: 15px 100px 0;
+  display: flex;
+  height: 100px;
+}
+
+.userInfoContainer {
+  flex: 1;
+  display: flex;
+}
+
+.profileHeader .userInfoContainer .profileImage {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+}
+
+.profileHeader .userInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profileHeader .userInfo .title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #111;
+}
+
+.profileHeader .userInfo .subscriberCount {
+  font-size: 14px;
+  color: rgba(17,17,17,0.6);
+}
+
+.profileHeader .buttonContainer {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profileHeader .buttonContainer .buttonItem {
+  align-items: center;
+  display: flex;
+}
+
+.profileHeader .buttonContainer .buttonItem button {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.profileContainer .channelContent {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.nav-item a {
+  color: rgba(17,17,17,0.6);
+}
+
+.channelContent .section .values {
+  color: rgba(17, 17, 17, 0.6);
+  display: flex;
+  flex-direction: column;
 }
